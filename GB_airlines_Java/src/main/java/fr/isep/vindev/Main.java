@@ -1,17 +1,41 @@
 package fr.isep.vindev;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.UUID;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        try {
+            ArrayList<Employe> equipagevol1 = new ArrayList<>();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+            // Création Vols
+            String departStr = "01-01-2024 08:00";
+            String arriveeStr = "01-01-2024 9:00";
+            Date dateDepart = formatter.parse(departStr);
+            Date dateArrivee = formatter.parse(arriveeStr);
+            Vol ParisLondres = new Vol(1,dateDepart, dateArrivee, equipagevol1);
+            Vol.listeVol.add(ParisLondres);
+            System.out.println(ParisLondres.toString());
+
+            //Création Pilotes
+            String strEmbaucheRoger = "01-01-2023 08:00";
+            Date dateEmbaucheRoger = formatter.parse(strEmbaucheRoger);
+            Pilote pilote1 = new Pilote(UUID.randomUUID(),"Roger","1 rue de Rennes","@free.fr", dateEmbaucheRoger,1);
+            ParisLondres.get
+
+            //Création Personnel de Cabine
+            String strEmbaucheTitouan = "01-02-2023 08:00";
+            Date dateEmbaucheTitouan = formatter.parse(strEmbaucheTitouan);
+            PersonnelCabine personnel1 = new PersonnelCabine(UUID.randomUUID(),"Titouan","2 rue des roses","@orange.fr",dateEmbaucheTitouan,2,"Bac+1")
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 }

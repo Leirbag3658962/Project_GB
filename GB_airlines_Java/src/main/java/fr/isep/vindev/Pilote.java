@@ -25,8 +25,12 @@ public class Pilote extends Employe{
         vol.equipage.add(pilote);
     }
 
-    public void obtenirVol(int numeroVol){
-
+    public void obtenirVol(int numeroVol, ArrayList<Vol> listeVol){
+        for (Vol vol : listeVol){
+            if (vol.getNumeroVol() == numeroVol){
+                vol.toString();
+            }
+        }
     }
 }
 

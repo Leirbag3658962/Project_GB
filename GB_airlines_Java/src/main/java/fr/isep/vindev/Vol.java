@@ -8,7 +8,7 @@ public class Vol {
     private Avion avion;
     public ArrayList<Employe> equipage;
     private ArrayList<Passager> passager;
-    public ArrayList<Vol> listeVol;
+    public static ArrayList<Vol> listeVol;
     private Aeroport origine;
     private Aeroport destination;
     private Date dateHeureDepart;
@@ -16,11 +16,15 @@ public class Vol {
     private boolean etat;
     private boolean isComplete;
 
-    public Vol(int numeroVolDate, Date dateHeureDepart, Date dateHeureArrivee, ArrayList<Employe> equipage) {
+    public Vol(int numeroVol, Date dateHeureDepart, Date dateHeureArrivee, ArrayList<Employe> equipage) {
         this.numeroVol = numeroVol;
         this.dateHeureDepart = dateHeureDepart;
         this.dateHeureArrivee = dateHeureArrivee;
         this.equipage = new ArrayList<>();
+    }
+
+    public ArrayList<Employe> getEquipage(){
+        return equipage;
     }
 
     public int getNumeroVol() {
