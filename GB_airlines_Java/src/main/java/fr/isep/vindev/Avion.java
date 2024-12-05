@@ -10,6 +10,7 @@ public class Avion {
         this.immatriculation = immatriculation;
         this.modele = modele;
         this.capacite = capacite;
+        this.isAffecte = false;
     }
 
     public String getImmatriculation() {
@@ -43,10 +44,22 @@ public class Avion {
 
     public void affecterVol(Vol vol){
         if(isAffecte){
-            System.out.println("Erreur: ");
+            System.out.println("Erreur: cet avion est deja affecte");
         }
-        vol.setAvion(this);
-        vol.setIsAvionAffecte(true);
+        else {
+            vol.setAvion(this);
+            vol.setIsAvionAffecte(true);
+            isAffecte = true;
+        }
+    }
+
+    public void verifierDisponibilite(){
+        if(isAffecte){
+            System.out.println("Cet avion n'est pas disponible");
+        }
+        else {
+            System.out.println("Cet avion est disponible");
+        }
     }
 
 }
