@@ -15,24 +15,29 @@ public class Passager extends Personne {
         return passeport;
     }
 
-    public void obtenirReservations(UUID numeroReservation, List<Reservation> listeReservation){
+    public static void obtenirReservations(UUID numeroReservation, List<Reservation> listeReservation){
         for (Reservation reservation : listeReservation){
             if (reservation.getNumeroReservation().equals(numeroReservation)){
                 System.out.println("Numéro de réservation: " + reservation.getNumeroReservation() +
-                        ", Date de la réservation: " + reservation.getNumeroReservation() +
-                        ", statut du la réservation: " + reservation.getNumeroReservation());
+                        ", Date de la réservation: " + reservation.getDateReservation() +
+                        ", statut du la réservation: " + reservation.getStatut());
             }
         }
     }
 
-    public void annulerReservation(UUID numeroReservation, List<Reservation> listeReservation){
+    public static String annulerReservation(UUID numeroReservation, List<Reservation> listeReservation){
+        System.out.println("Suppression de votre Réservation en cours...");
         for (Reservation reservations : listeReservation){
             if(reservations.getNumeroReservation().equals(numeroReservation)){
                 listeReservation.remove(reservations);
+                return "Votre réservation a été supprimée !";
             }
-        }
+        }return "Votre réservation n'a pas pû être supprimée !";
     }
 
+    public static void reserverVol(Vol vol, Passager passager){
+
+    }
 
 }
 

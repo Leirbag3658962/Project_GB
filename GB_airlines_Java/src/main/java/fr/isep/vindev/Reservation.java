@@ -9,7 +9,7 @@ public class Reservation {
     public static UUID numeroReservation;
     public Date dateReservation;
     public String statut;
-    private List<Reservation> listereservation = new ArrayList<>();
+    public static List<Reservation> listereservation = new ArrayList<>();
 
     public Reservation(UUID numeroReservation, Date dateReservation, String statut){
         this.numeroReservation = numeroReservation;
@@ -39,15 +39,17 @@ public class Reservation {
         listereservation.add(reservation);
     }
 
-    public void annulerReservation(UUID numeroReservation, List<Reservation> listeReservation){
+    public static String annulerReservation(UUID numeroReservation, List<Reservation> listeReservation){
+        System.out.println("Suppression de votre Réservation en cours...");
         for (Reservation reservations : listeReservation){
             if(reservations.getNumeroReservation().equals(numeroReservation)){
                 listeReservation.remove(reservations);
+                return "Votre réservation a été supprimée !";
             }
-        }
+        } return "Votre réservation n'a pas pû être supprimée !";
     }
 
-    public void modifierReservation(UUID numeroReservation, List<Reservation> listeReservation, Date nouvelleDate,
+    public static void modifierReservation(UUID numeroReservation, List<Reservation> listeReservation, Date nouvelleDate,
                                     String nouveauStatut){
         for (Reservation reservation : listeReservation){
             if (reservation.getNumeroReservation().equals(numeroReservation)){
@@ -56,5 +58,14 @@ public class Reservation {
             }
         }
     }
+
+    public static void confirmerReservation(UUID numeroReservation, List<Reservation> listeReservation){
+        for (Reservation reservation : listeReservation){
+            if (reservation.getNumeroReservation().equals(numeroReservation)){
+                reservation.setStatut("Réservation confirmée !");
+            }
+        }
+    }
+
 }
 

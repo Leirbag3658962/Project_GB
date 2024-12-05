@@ -13,14 +13,18 @@ public class Main {
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 
             // Création Vols
-
             String departStr = "01-01-2024 08:00";
             String arriveeStr = "01-01-2024 9:00";
             Date dateDepart = formatter.parse(departStr);
             Date dateArrivee = formatter.parse(arriveeStr);
             Vol ParisLondres = new Vol(1,dateDepart, dateArrivee, equipagevol1);
             Vol.listeVol.add(ParisLondres);
+            System.out.println("Info sur le vol Paris-Londres");
             System.out.println(ParisLondres.toString());
+
+            //Création Avions
+            Avion avion1 = new Avion("AA-123-BB","A320",500);
+            avion1.affecterVol(ParisLondres);
 
             //Création Pilotes
             String strEmbaucheRoger = "01-01-2023 08:00";
@@ -37,10 +41,40 @@ public class Main {
             PersonnelCabine.affecterVol(ParisLondres, personnel1);
             Employe.listeEmploye.add(personnel1);
 
+            //Création d'un passager
+            UUID idpassager = UUID.randomUUID();
+            Passager passager1 = new Passager(idpassager,"Stéphanie","10 rue le moine","flemme@gmail.com","Valide");
+
+            //Création Réservation
+            String stranciennereservation1 = "01-12-2023 08:00";
+            Date anciennedatereservation1 = formatter.parse(stranciennereservation1);
+            String strnewreservation1 = "21-12-2023 08:00";
+            Date newdatereservation1 = formatter.parse(stranciennereservation1);
+            UUID idReservation = UUID.randomUUID();
+            Reservation reservation1 = new Reservation(idReservation,anciennedatereservation1,"En cours de création...");
+            Reservation.listereservation.add(reservation1);
+
+
+            //Test méthodes de Réservation
+            System.out.println((" "));
+            System.out.println("Test des méthodes de réservations :");
+            System.out.println("Ancienne Réservation :");
+            Passager.obtenirReservations(idReservation,Reservation.listereservation);
+            System.out.println("Nouvelle Réservation :");
+            Reservation.modifierReservation(idReservation, Reservation.listereservation,newdatereservation1,"En cours de modifications...");
+            Passager.obtenirReservations(idReservation,Reservation.listereservation);
+            Reservation.confirmerReservation(idReservation, Reservation.listereservation);
+            Passager.obtenirReservations(idReservation,Reservation.listereservation);
+            System.out.println(Reservation.annulerReservation(idReservation,Reservation.listereservation));
+
+
             //Test fonction obtenirRole, obtenirVol, Obtenirinfo
             System.out.println("");
+            System.out.println("Test obtenirVol");
             System.out.println(Pilote.obtenirVol(1,Vol.listeVol));
+            System.out.println("Test obtenirRôle");
             System.out.println(Employe.obtenirRole(idPersonnel1));
+            System.out.println("Test obtenirInfos");
             System.out.println(Personne.obtenirInfos(pilote1));
 
         } catch (Exception e) {
