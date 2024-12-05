@@ -8,6 +8,7 @@ public class Vol {
     private Avion avion;
     public ArrayList<Employe> equipage;
     private ArrayList<Passager> passager;
+    public ArrayList<Vol> listeVol;
     private Aeroport origine;
     private Aeroport destination;
     private Date dateHeureDepart;
@@ -93,6 +94,10 @@ public class Vol {
 
     public void annulerVol(int numeroVol){
 
+    }
+
+    public void ajouterAListeVol(Vol vol){
+        listeVol.add(vol);
     }
 }
 

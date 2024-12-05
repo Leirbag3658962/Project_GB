@@ -24,5 +24,9 @@ public class Pilote extends Employe{
     public void affecterVol(Vol vol, Pilote pilote){
         vol.equipage.add(pilote);
     }
+
+    public void obtenirVol(int numeroVol){
+
+    }
 }
 
