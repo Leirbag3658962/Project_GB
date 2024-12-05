@@ -11,6 +11,11 @@ public class Passager extends Personne {
         this.passeport = passeport;
     }
 
+    @Override
+    public String toString() {
+        return "Passager [identifiant=" + this.getIdentifiant() + ", nom=" + this.getNom() + ", passport=" + this.getPasseport() + "]";
+    }
+
     public String getPasseport(){
         return passeport;
     }

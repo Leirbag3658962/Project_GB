@@ -1,7 +1,6 @@
 package fr.isep.vindev;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Vol {
     private int numeroVol;
@@ -202,12 +201,23 @@ public class Vol {
     public void annulerVol(){
         this.avion.setIsAffecte(false);
         this.pilote.setIsAffecte(false);
-        
+
         this.setEtat("Annule");
+    }
+
+    public void modifierVol(){
+
+
     }
 
     public void ajouterAListeVol(Vol vol){
         listeVol.add(vol);
+    }
+
+    public void listingPassager(){
+        for (int i = 0; i < passager.size(); i++) {
+            passager.get(i).toString();
+        }
     }
 }
 
