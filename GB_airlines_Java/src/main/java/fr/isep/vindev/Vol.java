@@ -15,10 +15,12 @@ public class Vol {
     private String etat;
     private Aeroport aeroportDebutAffecte;
     private Aeroport aeroportArriveeAffecte;
+    private Pilote pilote;
     public ArrayList<Employe> equipage;
     private boolean isAvionAffecte;
     private boolean isAeroportDebutAffecte;
     private boolean isAeroportArriveeAffecte;
+    private boolean isPiloteAffecte;
     private boolean isEquipageAffecte;
 
     public Vol(int numeroVol, String dateHeureDepart, String dateHeureArrivee) {

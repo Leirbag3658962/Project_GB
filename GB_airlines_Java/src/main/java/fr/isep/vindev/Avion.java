@@ -4,6 +4,7 @@ public class Avion {
     private String immatriculation;
     private String modele;
     private int capacite;
+    private boolean isAffecte;
 
     public Avion(String immatriculation, String modele, int capacite) {
         this.immatriculation = immatriculation;
@@ -41,7 +42,11 @@ public class Avion {
     }
 
     public void affecterVol(Vol vol){
+        if(isAffecte){
+            System.out.println("Erreur: ");
+        }
         vol.setAvion(this);
+        vol.setIsAvionAffecte(true);
     }
 
 }
