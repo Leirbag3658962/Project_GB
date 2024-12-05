@@ -17,7 +17,7 @@ public class Main {
             String arriveeStr = "01-01-2024 09:00";
             //Date dateDepart = formatter.parse(departStr);
             //Date dateArrivee = formatter.parse(arriveeStr);
-            Vol ParisLondres = new Vol(1, departStr, arriveeStr);
+            Vol ParisLondres = new Vol(1, "Paris", "Londres", departStr, arriveeStr);
             Vol.listeVol.add(ParisLondres);
             System.out.println("Info sur le vol Paris-Londres");
             System.out.println(ParisLondres.toString());

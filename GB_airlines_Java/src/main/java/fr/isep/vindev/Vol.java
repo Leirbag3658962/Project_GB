@@ -1,6 +1,7 @@
 package fr.isep.vindev;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Vol {
     private int numeroVol;
@@ -22,8 +23,10 @@ public class Vol {
     private boolean isPiloteAffecte;
     private boolean isEquipageAffecte;
 
-    public Vol(int numeroVol, String dateHeureDepart, String dateHeureArrivee) {
+    public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrivee) {
         this.numeroVol = numeroVol;
+        this.origine = origine;
+        this.destination = destination;
         this.dateHeureDepart = dateHeureDepart;
         this.dateHeureArrivee = dateHeureArrivee;
         this.isEquipageAffecte = false;
@@ -87,11 +90,23 @@ public class Vol {
     }
 
     public void setEtat(String etat) {
-        if (etat == "Prevu" || etat == "Annule" || etat == "Retarde") {
+        if (etat == "Prevu" && isAvionAffecte && isAeroportDebutAffecte && isAeroportArriveeAffecte && isPiloteAffecte && isEquipageAffecte) {
             this.etat = etat;
+        }
+        else if (etat == "Annule"){
+            this.avion.setIsAffecte(false);
+            this.pilote.setIsAffecte(false);
+            this.etat = etat;
+        }
+        else if (etat == "Retarde" && this.etat=="Prevu"){
+            System.out.println("De combien de temps le vol est-il retarde en min?");
+            Scanner retard = new Scanner(System.in);
+            this.etat = etat;
+            this.dateHeureDepart = dateHeureDepart + "retarde de " + retard + "min";
         }
         else {
             System.out.println("Erreur : etat non valide");
+            System.out.println("Choisissez entre 'Prevu', 'Annule', 'Retarde'");
         }
     }
 
