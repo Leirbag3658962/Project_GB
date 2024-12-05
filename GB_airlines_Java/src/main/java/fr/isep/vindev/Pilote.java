@@ -21,7 +21,7 @@ public class Pilote extends Employe{
         return heureDeVol;
     }
 
-    public void affecterVol(Vol vol, Pilote pilote){
+    public static void affecterVol(Vol vol, Pilote pilote){
         vol.equipage.add(pilote);
     }
 

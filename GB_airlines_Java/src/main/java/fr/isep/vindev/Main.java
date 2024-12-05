@@ -25,13 +25,15 @@ public class Main {
             String strEmbaucheRoger = "01-01-2023 08:00";
             Date dateEmbaucheRoger = formatter.parse(strEmbaucheRoger);
             Pilote pilote1 = new Pilote(UUID.randomUUID(),"Roger","1 rue de Rennes","@free.fr", dateEmbaucheRoger,1);
-            ParisLondres.get
+            ParisLondres.getEquipage().add(pilote1);
+            Pilote.affecterVol(ParisLondres,pilote1);
 
             //Création Personnel de Cabine
             String strEmbaucheTitouan = "01-02-2023 08:00";
             Date dateEmbaucheTitouan = formatter.parse(strEmbaucheTitouan);
-            PersonnelCabine personnel1 = new PersonnelCabine(UUID.randomUUID(),"Titouan","2 rue des roses","@orange.fr",dateEmbaucheTitouan,2,"Bac+1")
-
+            PersonnelCabine personnel1 = new PersonnelCabine(UUID.randomUUID(),"Titouan","2 rue des roses","@orange.fr",dateEmbaucheTitouan,2,"Bac+1");
+            ParisLondres.getEquipage().add(personnel1);
+            PersonnelCabine.affecterVol(ParisLondres, personnel1);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -89,7 +89,7 @@ public class Vol {
 
     @Override
     public String toString() {
-        return "Vol [numero:" + numeroVol + ", avion:" + avion + ", depart:" + origine + ", arrivee:" + destination + ", heure de depart:" + dateHeureDepart + ", heure d'arrivee:" + dateHeureArrivee + ", etat:" + etat + ", complet: " + isComplete + "]";
+        return "Vol [numero: " + numeroVol + ", avion: " + avion + ", depart: " + origine + ", arrivee: " + destination + ", heure de depart: " + dateHeureDepart + ", heure d'arrivee: " + dateHeureArrivee + ", etat: " + etat + ", complet: " + isComplete + ", Liste des employés: " + equipage + "]";
     }
 
     public void planifierVol(){

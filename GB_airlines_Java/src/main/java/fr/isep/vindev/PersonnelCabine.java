@@ -1,5 +1,6 @@
 package fr.isep.vindev;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -14,6 +15,18 @@ public class PersonnelCabine extends Employe{
 
     public String getQualification(){
         return qualification;
+    }
+
+    public static void affecterVol(Vol vol, PersonnelCabine personnel){
+        vol.equipage.add(personnel);
+    }
+
+    public void obtenirVol(int numeroVol, ArrayList<Vol> listeVol){
+        for (Vol vol : listeVol){
+            if (vol.getNumeroVol() == numeroVol){
+                vol.toString();
+            }
+        }
     }
 }
 
