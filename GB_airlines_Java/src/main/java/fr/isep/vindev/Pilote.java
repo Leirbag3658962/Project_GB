@@ -16,6 +16,11 @@ public class Pilote extends Employe{
         this.isAffecte = false;
     }
 
+    @Override
+    public String toString() {
+        return "[" + this.getNom() + ", licence: " + this.getLicense() + "]";
+    }
+
     public String getLicense(){
         return license;
     }

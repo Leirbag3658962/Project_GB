@@ -39,7 +39,7 @@ public class Aeroport {
 
     @Override
     public String toString() {
-        return "Aeroport [nom=" + nom + ", ville=" + ville + ", description=" + description + "]";
+        return nom;
     }
 
     public void affecterVol(Vol vol, boolean isArrivee){

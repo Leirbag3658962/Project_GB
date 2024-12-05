@@ -47,7 +47,7 @@ public class Avion {
 
     @Override
     public String toString() {
-        return "Avion [Immatriculation:" + immatriculation + ", modele:" + modele + ", capacite:" + capacite;
+        return "Avion [Immatriculation:" + immatriculation + ", modele:" + modele + ", capacite:" + capacite + "]";
     }
 
     public void affecterVol(Vol vol){

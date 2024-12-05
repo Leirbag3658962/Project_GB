@@ -206,7 +206,7 @@ public class Vol {
 
     @Override
     public String toString() {
-        return "Vol [numero: " + numeroVol + ", avion: " + avion + ", depart: " + origine + ", arrivee: " + destination + ", heure de depart: " + dateHeureDepart + ", heure d'arrivee: " + dateHeureArrivee + ", etat: " + etat + ", Liste des employés: " + equipage + "]";
+        return "Vol [numero: " + numeroVol + ", avion: " + avion + ", depart: " + origine + " a l'aeroport de " + aeroportDebutAffecte + ", arrivee: " + destination + " a l'aeroport de " + aeroportArriveeAffecte + ", heure de depart: " + dateHeureDepart + ", heure d'arrivee: " + dateHeureArrivee + ", etat: " + etat + ", Liste des employés: " + equipage + ", pilote: " + pilote + "]";
     }
 
     public void planifierVol(){
