@@ -152,6 +152,42 @@ public class Vol {
         return isEquipageAffecte;
     }
 
+    public void setNumeroVol(int numeroVol) {
+        this.numeroVol = numeroVol;
+    }
+
+    public void setEquipageAffecte(boolean equipageAffecte) {
+        isEquipageAffecte = equipageAffecte;
+    }
+
+    public boolean isPiloteAffecte() {
+        return isPiloteAffecte;
+    }
+
+    public void setPiloteAffecte(boolean piloteAffecte) {
+        isPiloteAffecte = piloteAffecte;
+    }
+
+    public void setAeroportArriveeAffecte(boolean aeroportArriveeAffecte) {
+        isAeroportArriveeAffecte = aeroportArriveeAffecte;
+    }
+
+    public void setAeroportDebutAffecte(boolean aeroportDebutAffecte) {
+        isAeroportDebutAffecte = aeroportDebutAffecte;
+    }
+
+    public void setAvionAffecte(boolean avionAffecte) {
+        isAvionAffecte = avionAffecte;
+    }
+
+    public Pilote getPilote() {
+        return pilote;
+    }
+
+    public void setPilote(Pilote pilote) {
+        this.pilote = pilote;
+    }
+
     // </editor-fold>
 
     @Override
