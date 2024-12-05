@@ -10,7 +10,7 @@ public class Reservation {
     public Date dateReservation;
     public String statut;
     public static List<Reservation> listereservation = new ArrayList<>();
-    private ArrayList<Reservation>reservations;
+    private ArrayList<Vol>reservations;
 
     public Reservation(UUID numeroReservation, Date dateReservation, String statut){
         this.numeroReservation = numeroReservation;
@@ -27,6 +27,9 @@ public class Reservation {
     }
     public String getStatut(){
         return statut;
+    }
+    public ArrayList<Vol> getReservations(){
+        return reservations;
     }
 
     public void setDateReservation(Date dateReservation) {

@@ -42,7 +42,12 @@ public class Passager extends Personne {
     }
 
     public static void reserverVol(Vol vol, Passager passager){
-        Reservation reservationActuelle = new Reservation(passager.getIdentifiant(),new Date(),"En cours de création...");
+        if(vol.getAvion().getCapacite() > 0){
+            Reservation reservationActuelle = new Reservation(passager.getIdentifiant(),new Date(),"En cours de création...");
+            reservationActuelle.getReservations().add(vol);
+            vol.getAvion().setCapacite(vol.getAvion().getCapacite()-1);
+            Reservation.listereservation.add(reservationActuelle);
+        }
 
     }
 
