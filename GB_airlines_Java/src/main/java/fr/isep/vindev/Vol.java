@@ -16,7 +16,7 @@ public class Vol {
     private Aeroport aeroportDebutAffecte;
     private Aeroport aeroportArriveeAffecte;
     private Pilote pilote;
-    public ArrayList<Employe> equipage;
+    public ArrayList<PersonnelCabine> equipage;
     private boolean isAvionAffecte;
     private boolean isAeroportDebutAffecte;
     private boolean isAeroportArriveeAffecte;
@@ -33,11 +33,12 @@ public class Vol {
         this.isAeroportDebutAffecte = false;
         this.isAeroportArriveeAffecte = false;
         this.isAvionAffecte = false;
+        this.equipage = new ArrayList<PersonnelCabine>();
         this.etat = "Incomplete";
     }
 
     // <editor-fold desc="Getter and setter">
-    public ArrayList<Employe> getEquipage(){
+    public ArrayList<PersonnelCabine> getEquipage(){
         return equipage;
     }
 
@@ -142,7 +143,7 @@ public class Vol {
         isEquipageAffecte = isEquipageAffecte;
     }
 
-    public void setEquipage(ArrayList<Employe> equipage) {
+    public void setEquipage(ArrayList<PersonnelCabine> equipage) {
         this.equipage = equipage;
     }
 

@@ -10,11 +10,13 @@ public class Reservation {
     public Date dateReservation;
     public String statut;
     public static List<Reservation> listereservation = new ArrayList<>();
+    private ArrayList<Reservation>reservations;
 
     public Reservation(UUID numeroReservation, Date dateReservation, String statut){
         this.numeroReservation = numeroReservation;
         this.dateReservation = dateReservation;
         this.statut = statut;
+        this.reservations = new ArrayList<>();
     }
 
     public UUID getNumeroReservation(){

@@ -38,7 +38,7 @@ public class Main {
             Date dateEmbaucheTitouan = formatter.parse(strEmbaucheTitouan);
             PersonnelCabine personnel1 = new PersonnelCabine(UUID.randomUUID(),"Titouan","2 rue des roses","@orange.fr",dateEmbaucheTitouan,2,"Bac+1");
             UUID idPersonnel1 = personnel1.getIdentifiant();
-            PersonnelCabine.affecterVol(ParisLondres, personnel1);
+            personnel1.affecterVol(ParisLondres);
             Employe.listeEmploye.add(personnel1);
 
             //Création d'un passager

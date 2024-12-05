@@ -1,5 +1,6 @@
 package fr.isep.vindev;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,6 +42,7 @@ public class Passager extends Personne {
     }
 
     public static void reserverVol(Vol vol, Passager passager){
+        Reservation reservationActuelle = new Reservation(passager.getIdentifiant(),new Date(),"En cours de création...");
 
     }
 
