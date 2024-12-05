@@ -8,7 +8,7 @@ public class Vol {
     private Avion avion;
     public ArrayList<Employe> equipage;
     private ArrayList<Passager> passager;
-    public static ArrayList<Vol> listeVol;
+    public static ArrayList<Vol> listeVol = new ArrayList<>();
     private Aeroport origine;
     private Aeroport destination;
     private Date dateHeureDepart;

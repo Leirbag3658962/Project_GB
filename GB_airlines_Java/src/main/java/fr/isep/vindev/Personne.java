@@ -39,10 +39,9 @@ public abstract class Personne {
         this.contact = contact;
     }
 
-    public void ObtenirInfos(){
-        System.out.println("Nom: " + nom);
-        System.out.println("Adresse: " + adresse);
-        System.out.println("Contact: " + contact);
+    public static String obtenirInfos(Personne personne){
+        System.out.println("Nom: " + personne.getNom() + ", Adresse: " + personne.getAdresse() + ", Contact: " + personne.getContact());
+        return "";
     }
 }
 

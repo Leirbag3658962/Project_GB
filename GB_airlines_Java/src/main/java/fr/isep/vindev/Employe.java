@@ -24,7 +24,15 @@ public abstract class Employe extends Personne {
         return dateEmbauche;
     }
 
-    public void obtenirRole(UUID identifiant){
+
+    //Faire une liste des employés
+    public static List<Employe> listeEmploye = new ArrayList<>();
+    public void ajouterEmployé(Employe employe){
+        listeEmploye.add(employe);
+
+
+    }
+    public static String obtenirRole(UUID identifiant){
 
         for (Employe employe : listeEmploye) {
             if (employe.getIdentifiant().equals(identifiant)) {
@@ -37,14 +45,10 @@ public abstract class Employe extends Personne {
                 }
 
             }
-        }
+        }return "";
 
     }
 
-    //Faire une liste des employés
-    public List<Employe> listeEmploye = new ArrayList<>();
-    public void ajouterEmployé(Employe employe){
-        listeEmploye.add(employe);
-    }
+
 }
 
