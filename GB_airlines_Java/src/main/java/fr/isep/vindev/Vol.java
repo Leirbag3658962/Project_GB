@@ -6,23 +6,33 @@ import java.util.Date;
 public class Vol {
     private int numeroVol;
     private Avion avion;
-    public ArrayList<Employe> equipage;
     private ArrayList<Passager> passager;
     public static ArrayList<Vol> listeVol = new ArrayList<>();
-    private Aeroport origine;
-    private Aeroport destination;
-    private Date dateHeureDepart;
-    private Date dateHeureArrivee;
-    private boolean etat;
-    private boolean isComplete;
+    private String origine;
+    private String destination;
+    private String dateHeureDepart;
+    private String dateHeureArrivee;
+    private String etat;
+    private Aeroport aeroportDebutAffecte;
+    private Aeroport aeroportArriveeAffecte;
+    public ArrayList<Employe> equipage;
+    private boolean isAvionAffecte;
+    private boolean isAeroportDebutAffecte;
+    private boolean isAeroportArriveeAffecte;
+    private boolean isEquipageAffecte;
 
-    public Vol(int numeroVol, Date dateHeureDepart, Date dateHeureArrivee, ArrayList<Employe> equipage) {
+    public Vol(int numeroVol, String dateHeureDepart, String dateHeureArrivee) {
         this.numeroVol = numeroVol;
         this.dateHeureDepart = dateHeureDepart;
         this.dateHeureArrivee = dateHeureArrivee;
-        this.equipage = new ArrayList<>();
+        this.isEquipageAffecte = false;
+        this.isAeroportDebutAffecte = false;
+        this.isAeroportArriveeAffecte = false;
+        this.isAvionAffecte = false;
+        this.etat = "Incomplete";
     }
 
+    // <editor-fold desc="Getter and setter">
     public ArrayList<Employe> getEquipage(){
         return equipage;
     }
@@ -39,57 +49,112 @@ public class Vol {
         this.avion = avion;
     }
 
-    public Aeroport getOrigine() {
+    public String getOrigine() {
         return origine;
     }
 
-    public void setOrigine(Aeroport origine) {
+    public void setOrigine(String origine) {
         this.origine = origine;
     }
 
-    public Aeroport getDestination() {
+    public String getDestination() {
         return destination;
     }
 
-    public void setDestination(Aeroport destination) {
+    public void setDestination(String destination) {
         this.destination = destination;
     }
 
-    public Date getDateHeureDepart() {
+    public String getDateHeureDepart() {
         return dateHeureDepart;
     }
 
-    public void setDateHeureDepart(Date dateHeureDepart) {
+    public void setDateHeureDepart(String dateHeureDepart) {
         this.dateHeureDepart = dateHeureDepart;
     }
 
-    public Date getDateHeureArrivee() {
+    public String getDateHeureArrivee() {
         return dateHeureArrivee;
     }
 
-    public void setDateHeureArrivee(Date dateHeureArrivee) {
+    public void setDateHeureArrivee(String dateHeureArrivee) {
         this.dateHeureArrivee = dateHeureArrivee;
     }
 
-    public boolean isEtat() {
+    public String isEtat() {
         return etat;
     }
 
-    public void setEtat(boolean etat) {
-        this.etat = etat;
+    public void setEtat(String etat) {
+        if (etat == "Prevu" || etat == "Annule" || etat == "Retarde") {
+            this.etat = etat;
+        }
+        else {
+            System.out.println("Erreur : etat non valide");
+        }
     }
 
-    public boolean isComplete() {
-        return isComplete;
+    public ArrayList<Passager> getPassager() {
+        return passager;
     }
 
-    public void setComplete(boolean complete) {
-        isComplete = complete;
+    public Aeroport getAeroportDebutAffecte() {
+        return aeroportDebutAffecte;
     }
+
+    public void setAeroportDebutAffecte(Aeroport aeroportDebutAffecte) {
+        this.aeroportDebutAffecte = aeroportDebutAffecte;
+    }
+
+    public void setAeroportArriveeAffecte(Aeroport aeroportArriveeAffecte) {
+        this.aeroportArriveeAffecte = aeroportArriveeAffecte;
+    }
+
+    public void setIsAvionAffecte(boolean isAvionAffecte) {
+        isAvionAffecte = isAvionAffecte;
+    }
+
+    public void setIsAeroportDebutAffecte(boolean isAeroportDebutAffecte) {
+        isAeroportDebutAffecte = isAeroportDebutAffecte;
+    }
+
+    public void setIsAeroportArriveeAffecte(boolean isAeroportArriveeAffecte) {
+        isAeroportArriveeAffecte = isAeroportArriveeAffecte;
+    }
+
+    public void setIsEquipageAffecte(boolean isEquipageAffecte) {
+        isEquipageAffecte = isEquipageAffecte;
+    }
+
+    public void setEquipage(ArrayList<Employe> equipage) {
+        this.equipage = equipage;
+    }
+
+    public Aeroport getAeroportArriveeAffecte() {
+        return aeroportArriveeAffecte;
+    }
+
+    public boolean isAvionAffecte() {
+        return isAvionAffecte;
+    }
+
+    public boolean isAeroportDebutAffecte() {
+        return isAeroportDebutAffecte;
+    }
+
+    public boolean isAeroportArriveeAffecte() {
+        return isAeroportArriveeAffecte;
+    }
+
+    public boolean isEquipageAffecte() {
+        return isEquipageAffecte;
+    }
+
+    // </editor-fold>
 
     @Override
     public String toString() {
-        return "Vol [numero: " + numeroVol + ", avion: " + avion + ", depart: " + origine + ", arrivee: " + destination + ", heure de depart: " + dateHeureDepart + ", heure d'arrivee: " + dateHeureArrivee + ", etat: " + etat + ", complet: " + isComplete + ", Liste des employés: " + equipage + "]";
+        return "Vol [numero: " + numeroVol + ", avion: " + avion + ", depart: " + origine + ", arrivee: " + destination + ", heure de depart: " + dateHeureDepart + ", heure d'arrivee: " + dateHeureArrivee + ", etat: " + etat + ", Liste des employés: " + equipage + "]";
     }
 
     public void planifierVol(){

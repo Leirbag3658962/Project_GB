@@ -14,10 +14,10 @@ public class Main {
 
             // Création Vols
             String departStr = "01-01-2024 08:00";
-            String arriveeStr = "01-01-2024 9:00";
-            Date dateDepart = formatter.parse(departStr);
-            Date dateArrivee = formatter.parse(arriveeStr);
-            Vol ParisLondres = new Vol(1,dateDepart, dateArrivee, equipagevol1);
+            String arriveeStr = "01-01-2024 09:00";
+            //Date dateDepart = formatter.parse(departStr);
+            //Date dateArrivee = formatter.parse(arriveeStr);
+            Vol ParisLondres = new Vol(1, departStr, arriveeStr);
             Vol.listeVol.add(ParisLondres);
             System.out.println("Info sur le vol Paris-Londres");
             System.out.println(ParisLondres.toString());

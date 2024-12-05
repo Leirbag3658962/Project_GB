@@ -11,6 +11,7 @@ public class Aeroport {
         this.description = description;
     }
 
+    // <editor-fold desc="Getter and setter">
     public String getNom() {
         return nom;
     }
@@ -34,14 +35,22 @@ public class Aeroport {
     public void setDescription(String description) {
         this.description = description;
     }
+    // </editor-fold>
 
     @Override
     public String toString() {
         return "Aeroport [nom=" + nom + ", ville=" + ville + ", description=" + description + "]";
     }
 
-    public void affecterVol(int numeroVol){
-
+    public void affecterVol(Vol vol, boolean isArrivee){
+        if (isArrivee){
+            vol.setAeroportArriveeAffecte(this);
+            vol.setIsAeroportArriveeAffecte(true);
+        }
+        else {
+            vol.setAeroportDebutAffecte(this);
+            vol.setIsAeroportDebutAffecte(true);
+        }
     }
 }
 
