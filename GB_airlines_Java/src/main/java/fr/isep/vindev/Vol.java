@@ -211,19 +211,17 @@ public class Vol {
     }
 
     public void planifierVol(){
-
+        for (int i=0; i< listeVol.size(); i++){
+            System.out.println(listeVol.get(i));
+        }
     }
 
     public void annulerVol(){
-        this.avion.setIsAffecte(false);
-        this.pilote.setIsAffecte(false);
-
         this.setEtat("Annule");
     }
 
-    public void modifierVol(){
-
-
+    public void modifierVol(Avion avion){
+        this.setAvion(avion);
     }
 
     public void ajouterAListeVol(Vol vol){
