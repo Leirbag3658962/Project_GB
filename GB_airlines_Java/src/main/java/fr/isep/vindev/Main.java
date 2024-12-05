@@ -30,7 +30,7 @@ public class Main {
             String strEmbaucheRoger = "01-01-2023 08:00";
             Date dateEmbaucheRoger = formatter.parse(strEmbaucheRoger);
             Pilote pilote1 = new Pilote(UUID.randomUUID(),"Roger","1 rue de Rennes","@free.fr", dateEmbaucheRoger,1);
-            Pilote.affecterVol(ParisLondres,pilote1);
+            pilote1.affecterVol(ParisLondres);
             Employe.listeEmploye.add(pilote1);
 
             //Création Personnel de Cabine

@@ -41,8 +41,8 @@ public class Avion {
         return isAffecte;
     }
 
-    public void setAffecte(boolean affecte) {
-        isAffecte = affecte;
+    public void setIsAffecte(boolean Affecte) {
+        isAffecte = Affecte;
     }
 
     @Override

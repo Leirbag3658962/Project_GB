@@ -7,11 +7,13 @@ import java.util.UUID;
 public class Pilote extends Employe{
     private String license;
     private Date heureDeVol;
+    private boolean isAffecte;
 
     public Pilote(UUID identifiant, String nom, String adresse, String contact, Date dateEmbauche, int numeroEmploye){
         super(identifiant, nom, adresse, contact, dateEmbauche, numeroEmploye);
         this.license = license;
         this.heureDeVol = heureDeVol;
+        this.isAffecte = false;
     }
 
     public String getLicense(){
@@ -21,8 +23,22 @@ public class Pilote extends Employe{
         return heureDeVol;
     }
 
-    public static void affecterVol(Vol vol, Pilote pilote){
-        vol.equipage.add(pilote);
+    public boolean isAffecte() {
+        return isAffecte;
+    }
+
+    public void setIsAffecte(boolean affecte) {
+        isAffecte = affecte;
+    }
+
+    public void affecterVol(Vol vol){
+        if (isAffecte) {
+            System.out.println("Ce pilote n'est pas disponible");
+        }
+        else {
+            vol.setPilote(this);
+            isAffecte = true;
+        }
     }
 
     public static String obtenirVol(int numeroVol, ArrayList<Vol> listeVol){

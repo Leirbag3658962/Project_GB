@@ -199,8 +199,11 @@ public class Vol {
 
     }
 
-    public void annulerVol(int numeroVol){
-
+    public void annulerVol(){
+        this.avion.setIsAffecte(false);
+        this.pilote.setIsAffecte(false);
+        
+        this.setEtat("Annule");
     }
 
     public void ajouterAListeVol(Vol vol){
