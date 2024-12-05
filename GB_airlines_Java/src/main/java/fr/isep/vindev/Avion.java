@@ -37,6 +37,14 @@ public class Avion {
         this.capacite = capacite;
     }
 
+    public boolean isAffecte() {
+        return isAffecte;
+    }
+
+    public void setAffecte(boolean affecte) {
+        isAffecte = affecte;
+    }
+
     @Override
     public String toString() {
         return "Avion [Immatriculation:" + immatriculation + ", modele:" + modele + ", capacite:" + capacite;
