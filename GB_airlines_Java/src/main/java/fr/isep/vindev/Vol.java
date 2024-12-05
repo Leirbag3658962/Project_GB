@@ -6,7 +6,7 @@ import java.util.Date;
 public class Vol {
     private int numeroVol;
     private Avion avion;
-    private ArrayList<Employe> equipage;
+    public ArrayList<Employe> equipage;
     private ArrayList<Passager> passager;
     private Aeroport origine;
     private Aeroport destination;
@@ -15,10 +15,11 @@ public class Vol {
     private boolean etat;
     private boolean isComplete;
 
-    public Vol(int numeroVolDate, Date dateHeureDepart, Date dateHeureArrivee) {
+    public Vol(int numeroVolDate, Date dateHeureDepart, Date dateHeureArrivee, ArrayList<Employe> equipage) {
         this.numeroVol = numeroVol;
         this.dateHeureDepart = dateHeureDepart;
         this.dateHeureArrivee = dateHeureArrivee;
+        this.equipage = new ArrayList<>();
     }
 
     public int getNumeroVol() {

@@ -1,5 +1,6 @@
 package fr.isep.vindev;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -20,6 +21,8 @@ public class Pilote extends Employe{
         return heureDeVol;
     }
 
-
+    public void affecterVol(Vol vol, Pilote pilote){
+        vol.equipage.add(pilote);
+    }
 }
 
