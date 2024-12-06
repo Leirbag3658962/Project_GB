@@ -233,5 +233,9 @@ public class Vol {
             passager.get(i).toString();
         }
     }
+
+    public void delete(Vol vol){
+        vol = null;
+    }
 }
 

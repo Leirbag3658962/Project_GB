@@ -52,5 +52,9 @@ public class Aeroport {
             vol.setIsAeroportDebutAffecte(true);
         }
     }
+
+    public void delete(Aeroport aeroport){
+        aeroport = null;
+    }
 }
 

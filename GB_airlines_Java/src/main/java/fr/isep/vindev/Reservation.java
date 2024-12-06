@@ -72,5 +72,9 @@ public class Reservation {
         }
     }
 
+    public void delete(Reservation reservation){
+        reservation = null;
+    }
+
 }
 

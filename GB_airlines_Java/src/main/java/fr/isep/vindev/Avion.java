@@ -70,4 +70,8 @@ public class Avion {
         }
     }
 
+    public void delete(Avion avion){
+        avion = null;
+    }
+
 }

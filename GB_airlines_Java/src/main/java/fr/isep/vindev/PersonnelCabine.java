@@ -45,5 +45,9 @@ public class PersonnelCabine extends Employe{
             }
         }return "";
     }
+
+    public void delete(PersonnelCabine personnelCabine){
+        personnelCabine = null;
+    }
 }
 

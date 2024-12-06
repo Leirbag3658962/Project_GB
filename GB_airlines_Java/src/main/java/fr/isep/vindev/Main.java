@@ -44,6 +44,7 @@ public class Main {
             //Création d'un passager
             UUID idpassager = UUID.randomUUID();
             Passager passager1 = new Passager(idpassager,"Stéphanie","10 rue le moine","flemme@gmail.com","Valide");
+            passager1.reserverVol(ParisLondres,passager1);
 
             //Création Réservation
             String stranciennereservation1 = "01-12-2023 08:00";
@@ -76,6 +77,12 @@ public class Main {
             System.out.println(Employe.obtenirRole(idPersonnel1));
             System.out.println("Test obtenirInfos");
             System.out.println(Personne.obtenirInfos(pilote1));
+
+            //Affichage de toutes les réservations
+            System.out.println("Liste des réservations :");
+            for (Reservation reservation : Reservation.listereservation){
+                System.out.println(reservation.getNumeroReservation());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

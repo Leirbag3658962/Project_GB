@@ -51,5 +51,9 @@ public class Passager extends Personne {
 
     }
 
+    public void delete(Passager passager){
+        passager = null;
+    }
+
 }
 

@@ -43,5 +43,9 @@ public abstract class Personne {
         System.out.println("Nom: " + personne.getNom() + ", Adresse: " + personne.getAdresse() + ", Contact: " + personne.getContact());
         return "";
     }
+
+    public void delete(Personne personne){
+        personne =null;
+    }
 }
 

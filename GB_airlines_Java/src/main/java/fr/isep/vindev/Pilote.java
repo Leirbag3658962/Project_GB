@@ -54,5 +54,9 @@ public class Pilote extends Employe{
             }
         }return "";
     }
+
+    public void delete(Pilote pilote){
+        pilote = null;
+    }
 }
 

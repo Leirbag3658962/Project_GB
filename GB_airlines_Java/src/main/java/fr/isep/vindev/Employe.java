@@ -50,5 +50,9 @@ public abstract class Employe extends Personne {
     }
 
 
+    public void delete(Employe employe){
+        employe = null;
+    }
+
 }
 
