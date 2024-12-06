@@ -179,22 +179,6 @@ public class Vol {
         return isPiloteAffecte;
     }
 
-    public void setPiloteAffecte(boolean piloteAffecte) {
-        isPiloteAffecte = piloteAffecte;
-    }
-
-    public void setAeroportArriveeAffecte(boolean aeroportArriveeAffecte) {
-        isAeroportArriveeAffecte = aeroportArriveeAffecte;
-    }
-
-    public void setAeroportDebutAffecte(boolean aeroportDebutAffecte) {
-        isAeroportDebutAffecte = aeroportDebutAffecte;
-    }
-
-    public void setAvionAffecte(boolean avionAffecte) {
-        isAvionAffecte = avionAffecte;
-    }
-
     public Pilote getPilote() {
         return pilote;
     }
@@ -220,8 +204,31 @@ public class Vol {
         this.setEtat("Annule");
     }
 
-    public void modifierVol(Avion avion){
-        this.setAvion(avion);
+    public void modifierVol(Avion avion, String origine, String destination, Aeroport aeroportDepart, Aeroport aeroportArrivee, Pilote pilote, ArrayList<PersonnelCabine> equipage, String etat) {
+        if (avion != null) {
+            this.setAvion(avion);
+        }
+        if (origine != null) {
+            this.setOrigine(origine);
+        }
+        if (destination != null) {
+            this.setDestination(destination);
+        }
+        if (aeroportDepart != null) {
+            this.setAeroportDebutAffecte(aeroportDepart);
+        }
+        if (aeroportArrivee != null) {
+            this.setAeroportArriveeAffecte(aeroportArrivee);
+        }
+        if (pilote != null) {
+            this.setPilote(pilote);
+        }
+        if (equipage != null) {
+            this.setEquipage(equipage);
+        }
+        if (etat != null) {
+            this.setEtat(etat);
+        }
     }
 
     public void ajouterAListeVol(Vol vol){
