@@ -76,7 +76,7 @@ public class Main {
             System.out.println("Test obtenirRôle");
             System.out.println(Employe.obtenirRole(idPersonnel1));
             System.out.println("Test obtenirInfos");
-            System.out.println(Personne.obtenirInfos(pilote1));
+            pilote1.obtenirInfos(pilote1);
 
             //Affichage de toutes les réservations
             System.out.println("Liste des réservations :");
