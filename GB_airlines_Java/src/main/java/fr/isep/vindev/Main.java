@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
+import static fr.isep.vindev.Avion.importAvion;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -87,6 +89,8 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        importAvion();
 
     }
 }
